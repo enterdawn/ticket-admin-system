@@ -15,5 +15,10 @@ namespace 票务管理系统
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
