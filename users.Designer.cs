@@ -29,27 +29,18 @@ namespace 票务管理系统
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.addticket = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.changeuserinfo = new System.Windows.Forms.Button();
             this.delticket = new System.Windows.Forms.Button();
             this.changeticket = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 12;
-            this.listBox1.Location = new System.Drawing.Point(23, 100);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(747, 232);
-            this.listBox1.TabIndex = 0;
             // 
             // addticket
             // 
-            this.addticket.Location = new System.Drawing.Point(121, 39);
+            this.addticket.Location = new System.Drawing.Point(158, 39);
             this.addticket.Name = "addticket";
             this.addticket.Size = new System.Drawing.Size(94, 46);
             this.addticket.TabIndex = 1;
@@ -69,7 +60,7 @@ namespace 票务管理系统
             // 
             // changeuserinfo
             // 
-            this.changeuserinfo.Location = new System.Drawing.Point(267, 39);
+            this.changeuserinfo.Location = new System.Drawing.Point(292, 39);
             this.changeuserinfo.Name = "changeuserinfo";
             this.changeuserinfo.Size = new System.Drawing.Size(146, 46);
             this.changeuserinfo.TabIndex = 3;
@@ -78,7 +69,7 @@ namespace 票务管理系统
             // 
             // delticket
             // 
-            this.delticket.Location = new System.Drawing.Point(464, 39);
+            this.delticket.Location = new System.Drawing.Point(491, 39);
             this.delticket.Name = "delticket";
             this.delticket.Size = new System.Drawing.Size(91, 46);
             this.delticket.TabIndex = 4;
@@ -103,18 +94,27 @@ namespace 票务管理系统
             this.label2.TabIndex = 6;
             this.label2.Text = "A先生/女士，早上好。";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 12;
+            this.listBox1.Location = new System.Drawing.Point(25, 91);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(702, 244);
+            this.listBox1.TabIndex = 7;
+            // 
             // users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 347);
+            this.ClientSize = new System.Drawing.Size(750, 347);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.changeticket);
             this.Controls.Add(this.delticket);
             this.Controls.Add(this.changeuserinfo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addticket);
-            this.Controls.Add(this.listBox1);
             this.Name = "users";
             this.Text = "users";
             this.ResumeLayout(false);
@@ -123,13 +123,12 @@ namespace 票务管理系统
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button addticket;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button changeuserinfo;
         private System.Windows.Forms.Button delticket;
         private System.Windows.Forms.Button changeticket;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
