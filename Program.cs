@@ -12,7 +12,7 @@ namespace 票务管理系统
         /// </summary>
         [STAThread]
         static void Main()
-        {///sdfds
+        {///sdfds///hvjh
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
