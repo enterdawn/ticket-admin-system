@@ -20,5 +20,10 @@ namespace 票务管理系统
         {
 
         }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
