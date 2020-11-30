@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "票务管理系统", "票务管理系统.csproj", "{ECEC2541-4A9A-44BB-A03E-029310CF986A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECEC2541-4A9A-44BB-A03E-029310CF986A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECEC2541-4A9A-44BB-A03E-029310CF986A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECEC2541-4A9A-44BB-A03E-029310CF986A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECEC2541-4A9A-44BB-A03E-029310CF986A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08A74300-600E-4440-A3A8-3497FD7CC019}
+	EndGlobalSection
+EndGlobal
