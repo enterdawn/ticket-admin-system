@@ -39,49 +39,45 @@ namespace 票务管理系统
             // 
             // reg
             // 
-            this.reg.Location = new System.Drawing.Point(194, 360);
-            this.reg.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reg.Location = new System.Drawing.Point(97, 180);
             this.reg.Name = "reg";
-            this.reg.Size = new System.Drawing.Size(136, 46);
+            this.reg.Size = new System.Drawing.Size(68, 23);
             this.reg.TabIndex = 0;
             this.reg.Text = "注册";
             this.reg.UseVisualStyleBackColor = true;
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(194, 200);
-            this.username.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.username.Location = new System.Drawing.Point(97, 100);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(346, 35);
+            this.username.Size = new System.Drawing.Size(175, 21);
             this.username.TabIndex = 1;
             this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(194, 272);
-            this.password.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.password.Location = new System.Drawing.Point(97, 136);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(346, 35);
+            this.password.Size = new System.Drawing.Size(175, 21);
             this.password.TabIndex = 2;
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(410, 360);
-            this.login.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login.Location = new System.Drawing.Point(205, 180);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(134, 46);
+            this.login.Size = new System.Drawing.Size(67, 23);
             this.login.TabIndex = 3;
             this.login.Text = "登录";
             this.login.UseVisualStyleBackColor = true;
+            this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 218);
-            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Location = new System.Drawing.Point(29, 109);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 24);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "用户名";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -89,25 +85,23 @@ namespace 票务管理系统
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 288);
-            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label2.Location = new System.Drawing.Point(29, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 24);
+            this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 5;
             this.label2.Text = "密码";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 664);
+            this.ClientSize = new System.Drawing.Size(355, 332);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.login);
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
             this.Controls.Add(this.reg);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
