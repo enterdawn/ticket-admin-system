@@ -23,7 +23,7 @@ namespace 票务管理系统
                 db.Open();
                 MessageBox.Show("数据库连接成功");
                 SqlCommand command = new SqlCommand("select * from users", db);
-                MessageBox.Show(command.ExecuteScalar().ToString());
+                //MessageBox.Show(command.ExecuteScalar().ToString());
             }
             catch (Exception ex)
             {
@@ -69,5 +69,10 @@ namespace 票务管理系统
             }
         }
 
+        private void reg_Click(object sender, EventArgs e)
+        {
+            reg Reg = new reg(db);
+            Reg.Show();
+        }
     }
 }
