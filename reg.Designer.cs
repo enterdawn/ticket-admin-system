@@ -31,11 +31,11 @@ namespace 票务管理系统
         {
             this.reg_btn = new System.Windows.Forms.Button();
             this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.cofirmpassword = new System.Windows.Forms.TextBox();
+            this.pwd = new System.Windows.Forms.TextBox();
+            this.cofirmpwd = new System.Windows.Forms.TextBox();
             this.mobile = new System.Windows.Forms.TextBox();
-            this.name = new System.Windows.Forms.TextBox();
-            this.IDnumber = new System.Windows.Forms.TextBox();
+            this.realname = new System.Windows.Forms.TextBox();
+            this.IDCardNumber = new System.Windows.Forms.TextBox();
             this.email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@ namespace 票务管理系统
             // reg_btn
             // 
             this.reg_btn.Location = new System.Drawing.Point(184, 546);
-            this.reg_btn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reg_btn.Margin = new System.Windows.Forms.Padding(6);
             this.reg_btn.Name = "reg_btn";
             this.reg_btn.Size = new System.Drawing.Size(598, 104);
             this.reg_btn.TabIndex = 0;
@@ -63,57 +63,57 @@ namespace 票务管理系统
             // username
             // 
             this.username.Location = new System.Drawing.Point(314, 100);
-            this.username.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.username.Margin = new System.Windows.Forms.Padding(6);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(464, 35);
             this.username.TabIndex = 1;
             // 
-            // password
+            // pwd
             // 
-            this.password.Location = new System.Drawing.Point(314, 156);
-            this.password.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.password.Name = "password";
-            this.password.PasswordChar = '*';
-            this.password.Size = new System.Drawing.Size(464, 35);
-            this.password.TabIndex = 2;
+            this.pwd.Location = new System.Drawing.Point(314, 163);
+            this.pwd.Margin = new System.Windows.Forms.Padding(6);
+            this.pwd.Name = "pwd";
+            this.pwd.PasswordChar = '*';
+            this.pwd.Size = new System.Drawing.Size(464, 35);
+            this.pwd.TabIndex = 2;
             // 
-            // cofirmpassword
+            // cofirmpwd
             // 
-            this.cofirmpassword.Location = new System.Drawing.Point(314, 210);
-            this.cofirmpassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.cofirmpassword.Name = "cofirmpassword";
-            this.cofirmpassword.PasswordChar = '*';
-            this.cofirmpassword.Size = new System.Drawing.Size(464, 35);
-            this.cofirmpassword.TabIndex = 3;
+            this.cofirmpwd.Location = new System.Drawing.Point(314, 210);
+            this.cofirmpwd.Margin = new System.Windows.Forms.Padding(6);
+            this.cofirmpwd.Name = "cofirmpwd";
+            this.cofirmpwd.PasswordChar = '*';
+            this.cofirmpwd.Size = new System.Drawing.Size(464, 35);
+            this.cofirmpwd.TabIndex = 3;
             // 
             // mobile
             // 
             this.mobile.Location = new System.Drawing.Point(314, 268);
-            this.mobile.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.mobile.Margin = new System.Windows.Forms.Padding(6);
             this.mobile.Name = "mobile";
             this.mobile.Size = new System.Drawing.Size(464, 35);
             this.mobile.TabIndex = 4;
             // 
-            // name
+            // realname
             // 
-            this.name.Location = new System.Drawing.Point(314, 324);
-            this.name.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(464, 35);
-            this.name.TabIndex = 5;
+            this.realname.Location = new System.Drawing.Point(314, 324);
+            this.realname.Margin = new System.Windows.Forms.Padding(6);
+            this.realname.Name = "realname";
+            this.realname.Size = new System.Drawing.Size(464, 35);
+            this.realname.TabIndex = 5;
             // 
-            // IDnumber
+            // IDCardNumber
             // 
-            this.IDnumber.Location = new System.Drawing.Point(314, 380);
-            this.IDnumber.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.IDnumber.Name = "IDnumber";
-            this.IDnumber.Size = new System.Drawing.Size(464, 35);
-            this.IDnumber.TabIndex = 6;
+            this.IDCardNumber.Location = new System.Drawing.Point(314, 380);
+            this.IDCardNumber.Margin = new System.Windows.Forms.Padding(6);
+            this.IDCardNumber.Name = "IDCardNumber";
+            this.IDCardNumber.Size = new System.Drawing.Size(464, 35);
+            this.IDCardNumber.TabIndex = 6;
             // 
             // email
             // 
             this.email.Location = new System.Drawing.Point(314, 492);
-            this.email.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.email.Margin = new System.Windows.Forms.Padding(6);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(464, 35);
             this.email.TabIndex = 8;
@@ -201,8 +201,11 @@ namespace 票务管理系统
             // sex
             // 
             this.sex.FormattingEnabled = true;
+            this.sex.Items.AddRange(new object[] {
+            "男",
+            "女"});
             this.sex.Location = new System.Drawing.Point(314, 436);
-            this.sex.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.sex.Margin = new System.Windows.Forms.Padding(6);
             this.sex.Name = "sex";
             this.sex.Size = new System.Drawing.Size(464, 32);
             this.sex.TabIndex = 19;
@@ -233,16 +236,17 @@ namespace 票务管理系统
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.email);
-            this.Controls.Add(this.IDnumber);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.IDCardNumber);
+            this.Controls.Add(this.realname);
             this.Controls.Add(this.mobile);
-            this.Controls.Add(this.cofirmpassword);
-            this.Controls.Add(this.password);
+            this.Controls.Add(this.cofirmpwd);
+            this.Controls.Add(this.pwd);
             this.Controls.Add(this.username);
             this.Controls.Add(this.reg_btn);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "reg";
             this.Text = "reg";
+            this.Load += new System.EventHandler(this.reg_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,11 +256,11 @@ namespace 票务管理系统
 
         private System.Windows.Forms.Button reg_btn;
         private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox cofirmpassword;
+        private System.Windows.Forms.TextBox pwd;
+        private System.Windows.Forms.TextBox cofirmpwd;
         private System.Windows.Forms.TextBox mobile;
-        private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox IDnumber;
+        private System.Windows.Forms.TextBox realname;
+        private System.Windows.Forms.TextBox IDCardNumber;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

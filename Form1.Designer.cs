@@ -40,7 +40,7 @@ namespace 票务管理系统
             // reg
             // 
             this.reg.Location = new System.Drawing.Point(194, 360);
-            this.reg.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.reg.Margin = new System.Windows.Forms.Padding(6);
             this.reg.Name = "reg";
             this.reg.Size = new System.Drawing.Size(136, 46);
             this.reg.TabIndex = 0;
@@ -51,7 +51,7 @@ namespace 票务管理系统
             // username
             // 
             this.username.Location = new System.Drawing.Point(194, 200);
-            this.username.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.username.Margin = new System.Windows.Forms.Padding(6);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(346, 35);
             this.username.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace 票务管理系统
             // password
             // 
             this.password.Location = new System.Drawing.Point(194, 272);
-            this.password.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.password.Margin = new System.Windows.Forms.Padding(6);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(346, 35);
@@ -69,7 +69,7 @@ namespace 票务管理系统
             // login
             // 
             this.login.Location = new System.Drawing.Point(410, 360);
-            this.login.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.login.Margin = new System.Windows.Forms.Padding(6);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(134, 46);
             this.login.TabIndex = 3;
@@ -109,9 +109,10 @@ namespace 票务管理系统
             this.Controls.Add(this.password);
             this.Controls.Add(this.username);
             this.Controls.Add(this.reg);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,19 +18,15 @@ namespace 票务管理系统
         public static SqlConnection db = new SqlConnection(connString);
         public Form1()
         {
-            try
-            {
-                db.Open();
-                MessageBox.Show("数据库连接成功");
-                SqlCommand command = new SqlCommand("select * from users", db);
-                //MessageBox.Show(command.ExecuteScalar().ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("数据库连接失败！" + ex.Message);
-                System.Environment.Exit(0);
-            }
-
+            
+            db.Open();
+            MessageBox.Show("数据库连接成功");
+            SqlCommand a = new SqlCommand("insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)" +
+                "values('1','1','1','男','1','1','1',2,1,'2020-12-21',0);", db);
+            a.ExecuteNonQuery();
+            SqlCommand command = new SqlCommand("select * from _user", db);
+            MessageBox.Show(command.ExecuteScalar().ToString());
+            
             InitializeComponent();
         }
         private void login_Click(object sender, EventArgs e)
@@ -68,11 +64,21 @@ namespace 票务管理系统
                 return pwd;
             }
         }
+        public string getMdPwd(string s)
+        {
+            return md532.getpass(s);
+        }
 
         private void reg_Click(object sender, EventArgs e)
         {
-            reg Reg = new reg(db);
+            reg Reg = new reg(db,this);
             Reg.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
+
