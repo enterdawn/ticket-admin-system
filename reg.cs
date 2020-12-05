@@ -12,32 +12,15 @@ namespace 票务管理系统
 {
     public partial class reg : Form
     {
-        private static SqlConnection db;
-        private DataTable dt = new DataTable();
+        private static string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
+        public static SqlConnection db = new SqlConnection(connString);
         private Form1 mainForm=new Form1();
-        public reg(SqlConnection DB,Form1 m)
+        public reg(Form1 m)
         {
             InitializeComponent();
-            db = DB;
-            init();
             mainForm = m;
         }
 
-        private void init()
-        {
-            dt.Columns.Add("userid",typeof(int));
-            dt.Columns.Add("nickName", typeof(string));
-            dt.Columns.Add("pwd", typeof(string));
-            dt.Columns.Add("realName", typeof(string));
-            dt.Columns.Add("sex", typeof(string));
-            dt.Columns.Add("phoneNum", typeof(string));
-            dt.Columns.Add("email", typeof(string));
-            dt.Columns.Add("IdCardNumber", typeof(string));
-            dt.Columns.Add("status", typeof(int));
-            dt.Columns.Add("admin", typeof(int));
-            dt.Columns.Add("regTime", typeof(DateTime));
-            dt.Columns.Add("active", typeof(int));
-        }
 
         private void reg_btn_Click(object sender, EventArgs e)
         {
@@ -77,7 +60,6 @@ namespace 票务管理系统
                 "values('" + username.Text.ToString()+"','"+mainForm.getMdPwd(pwd.Text.ToString())+"','"+realname.Text.ToString()+"','"+
                 sex.Text.ToString()+"','"+mobile.Text.ToString()+"','"+email.Text.ToString()+"','"+
                 IDCardNumber.Text.ToString()+"','"+"1',1,'"+DateTime.Now.ToString()+"',0);";
-            MessageBox.Show(op);
             SqlCommand command = new SqlCommand();
             try
             {
@@ -86,8 +68,10 @@ namespace 票务管理系统
                 command.Connection = db;
                 command.ExecuteNonQuery();
                 MessageBox.Show("注册成功");
+                /*
                 command.CommandText = "select * from _user;";
                 MessageBox.Show(command.ExecuteScalar().ToString());
+                */
                 db.Close();
                 this.Close();
             }

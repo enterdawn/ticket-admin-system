@@ -33,5 +33,16 @@ namespace 票务管理系统.Properties {
                 return ((string)(this["databaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\bin\\Debug\\dat" +
+            "abase.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string databaseConnectionString1 {
+            get {
+                return ((string)(this["databaseConnectionString1"]));
+            }
+        }
     }
 }

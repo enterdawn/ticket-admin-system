@@ -14,19 +14,19 @@ namespace 票务管理系统
     
     public partial class Form1 : Form
     {
-        private static string connString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\database.mdf;Integrated Security=True";
-        public static SqlConnection db = new SqlConnection(connString);
+        private static string connString  = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
+        private SqlConnection db = new SqlConnection(connString);
         public Form1()
         {
-            
+            /*
             db.Open();
-            MessageBox.Show("数据库连接成功");
             SqlCommand a = new SqlCommand("insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)" +
-                "values('1','1','1','男','1','1','1',2,1,'2020-12-21',0);", db);
+                "values('2','1','1','男','1','1','1',2,1,'2020-12-21',0);", db);
             a.ExecuteNonQuery();
             SqlCommand command = new SqlCommand("select * from _user", db);
             MessageBox.Show(command.ExecuteScalar().ToString());
-            
+            db.Close();
+            */
             InitializeComponent();
         }
         private void login_Click(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace 票务管理系统
 
         private void reg_Click(object sender, EventArgs e)
         {
-            reg Reg = new reg(db,this);
+            reg Reg = new reg(this);
             Reg.Show();
         }
 
