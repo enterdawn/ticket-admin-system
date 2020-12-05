@@ -59,7 +59,7 @@ namespace 票务管理系统
             string op = "insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)"+
                 "values('" + username.Text.ToString()+"','"+mainForm.getMdPwd(pwd.Text.ToString())+"','"+realname.Text.ToString()+"','"+
                 sex.Text.ToString()+"','"+mobile.Text.ToString()+"','"+email.Text.ToString()+"','"+
-                IDCardNumber.Text.ToString()+"','"+"1',1,'"+DateTime.Now.ToString()+"',0);";
+                IDCardNumber.Text.ToString()+"','"+"1',1,'"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"',0);";
             SqlCommand command = new SqlCommand();
             try
             {
