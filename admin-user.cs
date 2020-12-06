@@ -15,5 +15,16 @@ namespace 票务管理系统
         {
             InitializeComponent();
         }
+
+        private void check_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            info INFO = new info();
+            INFO.Show();
+        }
     }
 }

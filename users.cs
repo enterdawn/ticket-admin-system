@@ -20,5 +20,16 @@ namespace 票务管理系统
         {
 
         }
+
+        private void changeticket_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changeuserinfo_Click(object sender, EventArgs e)
+        {
+            info INFO = new info();
+            INFO.Show();
+        }
     }
 }

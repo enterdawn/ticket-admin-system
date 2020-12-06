@@ -43,7 +43,8 @@ namespace 票务管理系统
                 da.SelectCommand = cmd;//设置为已实例化SqlDataAdapter的查询命令
                 DataSet ds = new DataSet();//实例化dataset
                 da.Fill(ds);//把数据填充到dataset
-                if (ds.Tables[0].Rows[0].ItemArray[9].ToString() == "0")
+                
+                if (ds.Tables[0].Rows[0]["_admin"] == "0")
                 {
                     users user = new users();
                     user.Show();
