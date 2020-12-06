@@ -35,5 +35,11 @@ namespace 票务管理系统
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            modifyUserInfo v = new modifyUserInfo(name, pwd);
+            v.Show();
+        }
     }
 }

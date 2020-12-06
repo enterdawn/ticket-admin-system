@@ -39,7 +39,7 @@ namespace 票务管理系统
                     MessageBox.Show("用户名或密码错误");
                     return;
                 }
-                if (ds.Tables[0].Rows[0]["_admin"] == "0")
+                if (ds.Tables[0].Rows[0]["_admin"].ToString() == "0")
                 {
                     users user = new users(name,pwd);
                     user.Show();
