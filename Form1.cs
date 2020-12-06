@@ -11,10 +11,10 @@ using System.Security.Cryptography;
 
 namespace 票务管理系统
 {
-    
+
     public partial class Form1 : Form
     {
-        private static string connString  = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
+        private static string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
         private SqlConnection db = new SqlConnection(connString);
         public Form1()
         {
@@ -31,9 +31,34 @@ namespace 票务管理系统
         }
         private void login_Click(object sender, EventArgs e)
         {
-            string user = username.Text;
-            string pass = md532.getpass(password.Text);//使用md5对密码进行加密
-
+            string name = username.Text;
+            string pwd = md532.getpass(password.Text.ToString());//使用md5对密码进行加密
+            SqlCommand cmd = new SqlCommand("select * from _user where nickname = " + name);
+            cmd.Connection = db;
+            try
+            {
+                db.Open();
+                cmd.CommandText = "select * from _user where nickname = '" + name + "' and pwd = '" + pwd + "'";
+                SqlDataAdapter da = new SqlDataAdapter();//实例化sqldataadpter
+                da.SelectCommand = cmd;//设置为已实例化SqlDataAdapter的查询命令
+                DataSet ds = new DataSet();//实例化dataset
+                da.Fill(ds);//把数据填充到dataset
+                if (ds.Tables[0].Rows[0].ItemArray[9].ToString() == "0")
+                {
+                    users user = new users();
+                    user.Show();
+                }
+                else
+                {
+                    admin_user adu = new admin_user();
+                    adu.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("登陆失败\r\n" + ex.Message);
+                Dispose();
+            }
 
         }
         private void label1_Click(object sender, EventArgs e)

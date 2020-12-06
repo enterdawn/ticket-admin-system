@@ -12,9 +12,7 @@ namespace 票务管理系统
 {
     public partial class reg : Form
     {
-        private static string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
-        public static SqlConnection db = new SqlConnection(connString);
-        private Form1 mainForm=new Form1();
+        private Form1 mainForm = new Form1();
         public reg(Form1 m)
         {
             InitializeComponent();
@@ -56,10 +54,12 @@ namespace 票务管理系统
                 MessageBox.Show("请输入身份证号");
                 return;
             }
-            string op = "insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)"+
-                "values('" + username.Text.ToString()+"','"+mainForm.getMdPwd(pwd.Text.ToString())+"','"+realname.Text.ToString()+"','"+
-                sex.Text.ToString()+"','"+mobile.Text.ToString()+"','"+email.Text.ToString()+"','"+
-                IDCardNumber.Text.ToString()+"','"+"1',1,'"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") +"',0);";
+            string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
+            SqlConnection db = new SqlConnection(connString);
+            string op = "insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)" +
+                "values('" + username.Text.ToString() + "','" + mainForm.getMdPwd(pwd.Text.ToString()) + "','" + realname.Text.ToString() + "','" +
+                sex.Text.ToString() + "','" + mobile.Text.ToString() + "','" + email.Text.ToString() + "','" +
+                IDCardNumber.Text.ToString() + "','" + "1',0,'" + DateTime.Now.ToString() + "',0);";
             SqlCommand command = new SqlCommand();
             try
             {
@@ -68,14 +68,10 @@ namespace 票务管理系统
                 command.Connection = db;
                 command.ExecuteNonQuery();
                 MessageBox.Show("注册成功");
-                /*
-                command.CommandText = "select * from _user;";
-                MessageBox.Show(command.ExecuteScalar().ToString());
-                */
                 db.Close();
-                this.Close();
+                Dispose();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("注册失败\r\n" + ex.Message);
                 db.Close();

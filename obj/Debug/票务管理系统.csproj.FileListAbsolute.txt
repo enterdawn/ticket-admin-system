@@ -1,8 +1,3 @@
-D:\VS数据\ticket\bin\Debug\database.mdf
-D:\VS数据\ticket\bin\Debug\database_log.ldf
-D:\VS数据\ticket\bin\Debug\票务管理系统.exe.config
-D:\VS数据\ticket\bin\Debug\票务管理系统.exe
-D:\VS数据\ticket\bin\Debug\票务管理系统.pdb
 D:\VS数据\ticket\obj\Debug\票务管理系统.csprojAssemblyReference.cache
 D:\VS数据\ticket\obj\Debug\票务管理系统.Form1.resources
 D:\VS数据\ticket\obj\Debug\票务管理系统.Properties.Resources.resources
@@ -34,3 +29,8 @@ D:\C#\票务管理系统\database_log.ldf
 D:\C#\票务管理系统\票务管理系统.exe.config
 D:\C#\票务管理系统\票务管理系统.exe
 D:\C#\票务管理系统\票务管理系统.pdb
+D:\VS数据\ticket\database.mdf
+D:\VS数据\ticket\database_log.ldf
+D:\VS数据\ticket\票务管理系统.exe.config
+D:\VS数据\ticket\票务管理系统.exe
+D:\VS数据\ticket\票务管理系统.pdb
