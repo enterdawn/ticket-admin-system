@@ -30,19 +30,19 @@ namespace 票务管理系统
         private void InitializeComponent()
         {
             this.change = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
+            this.IDCardNumber = new System.Windows.Forms.TextBox();
+            this.sex = new System.Windows.Forms.TextBox();
+            this.phoneNum = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.apassword = new System.Windows.Forms.TextBox();
+            this.realName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ausername = new System.Windows.Forms.TextBox();
+            this.nickName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,38 +58,39 @@ namespace 票务管理系统
             this.change.TabIndex = 32;
             this.change.Text = "修改";
             this.change.UseVisualStyleBackColor = true;
+            this.change.Click += new System.EventHandler(this.change_Click);
             // 
-            // textBox5
+            // email
             // 
-            this.textBox5.Location = new System.Drawing.Point(178, 273);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(562, 35);
-            this.textBox5.TabIndex = 31;
+            this.email.Location = new System.Drawing.Point(178, 273);
+            this.email.Margin = new System.Windows.Forms.Padding(6);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(562, 35);
+            this.email.TabIndex = 31;
             // 
-            // textBox4
+            // IDCardNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(178, 343);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(562, 35);
-            this.textBox4.TabIndex = 30;
+            this.IDCardNumber.Location = new System.Drawing.Point(178, 343);
+            this.IDCardNumber.Margin = new System.Windows.Forms.Padding(6);
+            this.IDCardNumber.Name = "IDCardNumber";
+            this.IDCardNumber.Size = new System.Drawing.Size(562, 35);
+            this.IDCardNumber.TabIndex = 30;
             // 
-            // textBox3
+            // sex
             // 
-            this.textBox3.Location = new System.Drawing.Point(464, 107);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 35);
-            this.textBox3.TabIndex = 29;
+            this.sex.Location = new System.Drawing.Point(464, 107);
+            this.sex.Margin = new System.Windows.Forms.Padding(6);
+            this.sex.Name = "sex";
+            this.sex.Size = new System.Drawing.Size(196, 35);
+            this.sex.TabIndex = 29;
             // 
-            // textBox1
+            // phoneNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(464, 179);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 35);
-            this.textBox1.TabIndex = 27;
+            this.phoneNum.Location = new System.Drawing.Point(464, 179);
+            this.phoneNum.Margin = new System.Windows.Forms.Padding(6);
+            this.phoneNum.Name = "phoneNum";
+            this.phoneNum.Size = new System.Drawing.Size(196, 35);
+            this.phoneNum.TabIndex = 27;
             // 
             // label7
             // 
@@ -141,13 +142,13 @@ namespace 票务管理系统
             this.label3.TabIndex = 22;
             this.label3.Text = "手机";
             // 
-            // apassword
+            // realName
             // 
-            this.apassword.Location = new System.Drawing.Point(182, 188);
-            this.apassword.Margin = new System.Windows.Forms.Padding(6);
-            this.apassword.Name = "apassword";
-            this.apassword.Size = new System.Drawing.Size(192, 35);
-            this.apassword.TabIndex = 21;
+            this.realName.Location = new System.Drawing.Point(182, 188);
+            this.realName.Margin = new System.Windows.Forms.Padding(6);
+            this.realName.Name = "realName";
+            this.realName.Size = new System.Drawing.Size(192, 35);
+            this.realName.TabIndex = 21;
             // 
             // label2
             // 
@@ -169,13 +170,13 @@ namespace 票务管理系统
             this.label1.TabIndex = 19;
             this.label1.Text = "用户名";
             // 
-            // ausername
+            // nickName
             // 
-            this.ausername.Location = new System.Drawing.Point(178, 107);
-            this.ausername.Margin = new System.Windows.Forms.Padding(6);
-            this.ausername.Name = "ausername";
-            this.ausername.Size = new System.Drawing.Size(196, 35);
-            this.ausername.TabIndex = 18;
+            this.nickName.Location = new System.Drawing.Point(178, 107);
+            this.nickName.Margin = new System.Windows.Forms.Padding(6);
+            this.nickName.Name = "nickName";
+            this.nickName.Size = new System.Drawing.Size(196, 35);
+            this.nickName.TabIndex = 18;
             // 
             // label8
             // 
@@ -212,6 +213,7 @@ namespace 票务管理系统
             this.button1.TabIndex = 36;
             this.button1.Text = "修改密码";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // info
             // 
@@ -223,21 +225,22 @@ namespace 票务管理系统
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.change);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.IDCardNumber);
+            this.Controls.Add(this.sex);
+            this.Controls.Add(this.phoneNum);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.apassword);
+            this.Controls.Add(this.realName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ausername);
+            this.Controls.Add(this.nickName);
             this.Name = "info";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.info_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,19 +249,19 @@ namespace 票务管理系统
         #endregion
 
         private System.Windows.Forms.Button change;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox IDCardNumber;
+        private System.Windows.Forms.TextBox sex;
+        private System.Windows.Forms.TextBox phoneNum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox apassword;
+        private System.Windows.Forms.TextBox realName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox ausername;
+        private System.Windows.Forms.TextBox nickName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

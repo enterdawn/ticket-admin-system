@@ -41,7 +41,7 @@ namespace 票务管理系统
             // addticket
             // 
             this.addticket.Location = new System.Drawing.Point(256, 78);
-            this.addticket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.addticket.Margin = new System.Windows.Forms.Padding(6);
             this.addticket.Name = "addticket";
             this.addticket.Size = new System.Drawing.Size(188, 92);
             this.addticket.TabIndex = 1;
@@ -63,7 +63,7 @@ namespace 票务管理系统
             // changeuserinfo
             // 
             this.changeuserinfo.Location = new System.Drawing.Point(485, 79);
-            this.changeuserinfo.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.changeuserinfo.Margin = new System.Windows.Forms.Padding(6);
             this.changeuserinfo.Name = "changeuserinfo";
             this.changeuserinfo.Size = new System.Drawing.Size(214, 92);
             this.changeuserinfo.TabIndex = 3;
@@ -74,7 +74,7 @@ namespace 票务管理系统
             // delticket
             // 
             this.delticket.Location = new System.Drawing.Point(767, 79);
-            this.delticket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.delticket.Margin = new System.Windows.Forms.Padding(6);
             this.delticket.Name = "delticket";
             this.delticket.Size = new System.Drawing.Size(182, 92);
             this.delticket.TabIndex = 4;
@@ -84,7 +84,7 @@ namespace 票务管理系统
             // changeticket
             // 
             this.changeticket.Location = new System.Drawing.Point(1007, 78);
-            this.changeticket.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.changeticket.Margin = new System.Windows.Forms.Padding(6);
             this.changeticket.Name = "changeticket";
             this.changeticket.Size = new System.Drawing.Size(212, 92);
             this.changeticket.TabIndex = 5;
@@ -107,10 +107,11 @@ namespace 票务管理系统
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 24;
             this.listBox1.Location = new System.Drawing.Point(50, 182);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(6);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(1400, 484);
             this.listBox1.TabIndex = 7;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // users
             // 
@@ -124,7 +125,7 @@ namespace 票务管理系统
             this.Controls.Add(this.changeuserinfo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.addticket);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "users";
             this.Text = "users";
             this.ResumeLayout(false);

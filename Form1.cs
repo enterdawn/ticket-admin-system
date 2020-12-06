@@ -18,15 +18,6 @@ namespace 票务管理系统
         private SqlConnection db = new SqlConnection(connString);
         public Form1()
         {
-            /*
-            db.Open();
-            SqlCommand a = new SqlCommand("insert into _user(nickname,pwd,realName,sex,phoneNum,email,IDCardNumber,_status,_admin,regTime,active)" +
-                "values('2','1','1','男','1','1','1',2,1,'2020-12-21',0);", db);
-            a.ExecuteNonQuery();
-            SqlCommand command = new SqlCommand("select * from _user", db);
-            MessageBox.Show(command.ExecuteScalar().ToString());
-            db.Close();
-            */
             InitializeComponent();
         }
         private void login_Click(object sender, EventArgs e)
@@ -43,22 +34,28 @@ namespace 票务管理系统
                 da.SelectCommand = cmd;//设置为已实例化SqlDataAdapter的查询命令
                 DataSet ds = new DataSet();//实例化dataset
                 da.Fill(ds);//把数据填充到dataset
-                
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("用户名或密码错误");
+                    return;
+                }
                 if (ds.Tables[0].Rows[0]["_admin"] == "0")
                 {
-                    users user = new users();
+                    users user = new users(name,pwd);
                     user.Show();
                 }
                 else
                 {
-                    admin_user adu = new admin_user();
+                    admin_user adu = new admin_user(name,pwd);
                     adu.Show();
                 }
+                db.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("登陆失败\r\n" + ex.Message);
                 Dispose();
+                db.Close();
             }
 
         }

@@ -11,9 +11,13 @@ namespace 票务管理系统
 {
     public partial class admin_user : Form
     {
-        public admin_user()
+        private string name;
+        private string pwd;
+        public admin_user(string Name,string Pwd)
         {
             InitializeComponent();
+            name = Name;
+            pwd = Pwd;
         }
 
         private void check_Click(object sender, EventArgs e)
@@ -23,8 +27,13 @@ namespace 票务管理系统
 
         private void button1_Click(object sender, EventArgs e)
         {
-            info INFO = new info();
+            info INFO = new info(name,pwd);
             INFO.Show();
+        }
+
+        private void admin_user_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

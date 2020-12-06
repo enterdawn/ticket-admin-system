@@ -73,6 +73,7 @@ namespace 票务管理系统
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "admin_user";
             this.Text = "admin_user";
+            this.Load += new System.EventHandler(this.admin_user_Load);
             this.ResumeLayout(false);
 
         }

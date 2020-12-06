@@ -34,3 +34,6 @@ D:\VS数据\ticket\database_log.ldf
 D:\VS数据\ticket\票务管理系统.exe.config
 D:\VS数据\ticket\票务管理系统.exe
 D:\VS数据\ticket\票务管理系统.pdb
+D:\VS数据\ticket\obj\Debug\票务管理系统.modifyUserInfo.resources
+D:\VS数据\ticket\obj\Debug\票务管理系统.info.resources
+D:\VS数据\ticket\obj\Debug\票务管理系统.modifyPwd.resources

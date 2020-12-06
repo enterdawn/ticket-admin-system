@@ -6,14 +6,16 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 票务管理系统
 {
     public partial class modifyUserInfo : Form
     {
-        public modifyUserInfo()
+        public modifyUserInfo(string name,string pwd)
         {
             InitializeComponent();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
