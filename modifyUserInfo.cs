@@ -28,7 +28,6 @@ namespace 票务管理系统
             try
             {
                 db.Open();
-                //MessageBox.Show("select nickname as '用户名',IDCardNumber as '身份证号码',_admin as '管理员权限',_status as '管理员权限',regTime as '注册时间',active as '活跃度',sex as '性别',phoneNum as '手机号码',email as '电子邮箱' from _user where _admin = '0';");
                 SqlCommand cmd = new SqlCommand("select nickname as '用户名',IDCardNumber as '身份证号码',_admin as '管理员权限',_status as '管理员权限',regTime as '注册时间',active as '活跃度',sex as '性别',phoneNum as '手机号码',email as '电子邮箱' from _user where _admin = '0';", db);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
