@@ -37,23 +37,26 @@ namespace 票务管理系统
                 if (ds.Tables[0].Rows.Count == 0)
                 {
                     MessageBox.Show("用户名或密码错误");
+                    db.Close();
                     return;
                 }
                 if (ds.Tables[0].Rows[0]["_admin"].ToString() == "0")
                 {
                     users user = new users(name,pwd);
                     user.Show();
+                    this.Hide();
                 }
                 else
                 {
                     admin_user adu = new admin_user(name,pwd);
                     adu.Show();
+                    this.Hide();
                 }
                 db.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("登陆失败\r\n" + ex.Message);
+                MessageBox.Show("登录失败\r\n" + ex.Message);
                 Dispose();
                 db.Close();
             }

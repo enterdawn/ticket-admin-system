@@ -41,5 +41,10 @@ namespace 票务管理系统
             modifyUserInfo v = new modifyUserInfo(name, pwd);
             v.Show();
         }
+
+        private void admin_user_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }
