@@ -90,7 +90,7 @@ namespace 票务管理系统
                 return pwd;
             }
         }
-        public string getMdPwd(string s)
+        public static string getMdPwd(string s)
         {
             return md532.getpass(s);
         }
