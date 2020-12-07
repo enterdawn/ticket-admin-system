@@ -16,7 +16,6 @@ D:\C#\票务管理系统\obj\Debug\票务管理系统.admin_user.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.Form1.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.Properties.Resources.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.reg.resources
-D:\C#\票务管理系统\obj\Debug\票务管理系统.user_ticket.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.users.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.csproj.GenerateResource.cache
 D:\C#\票务管理系统\obj\Debug\票务管理系统.csproj.CoreCompileInputs.cache
@@ -38,3 +37,4 @@ D:\VS数据\ticket\obj\Debug\票务管理系统.modifyPwd.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.modifyPwd.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.modifyUserInfo.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.info.resources
+D:\C#\票务管理系统\obj\Debug\票务管理系统.admin_password.resources

@@ -30,8 +30,8 @@ namespace 票务管理系统
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 v = new Form1();
-            string oldPwd = v.getMdPwd(textBox1.Text.ToString());
+            //Form1 v = new Form1();
+            string oldPwd = Form1.getMdPwd(textBox1.Text.ToString());
             if (oldPwd != Pwd)
             {
                 MessageBox.Show("旧密码错误");
@@ -47,7 +47,7 @@ namespace 票务管理系统
             try
             {
                 db.Open();
-                SqlCommand cmd = new SqlCommand("update _user set pwd = '"+v.getMdPwd(newPwd)+"' where nickname = '"+Name+"';", db);
+                SqlCommand cmd = new SqlCommand("update _user set pwd = '"+ Form1.getMdPwd(newPwd)+"' where nickname = '"+Name+"';", db);
                 cmd.ExecuteNonQuery();
                 db.Close();
             }

@@ -46,5 +46,11 @@ namespace 票务管理系统
         {
             System.Environment.Exit(0);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            admin_password wd = new admin_password();
+            wd.Show();
+        }
     }
 }
