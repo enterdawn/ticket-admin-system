@@ -42,13 +42,13 @@ namespace 票务管理系统
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 82;
             this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(989, 372);
+            this.dataGridView1.Size = new System.Drawing.Size(979, 372);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(447, 397);
+            this.btn1.Location = new System.Drawing.Point(446, 409);
             this.btn1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(110, 44);
@@ -60,7 +60,7 @@ namespace 票务管理系统
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 520);
+            this.ClientSize = new System.Drawing.Size(1026, 520);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
