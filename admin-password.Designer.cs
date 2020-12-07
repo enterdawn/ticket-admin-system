@@ -91,7 +91,8 @@ namespace 票务管理系统
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "admin_password";
-            this.Text = "admin_password";
+            this.ShowIcon = false;
+            this.Text = "重置用户密码";
             this.ResumeLayout(false);
             this.PerformLayout();
 
