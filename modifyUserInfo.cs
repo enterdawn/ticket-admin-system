@@ -19,6 +19,7 @@ namespace 票务管理系统
         private List<List<string>> oldData = new List<List<string>>();
         private List<List<string>> newData = new List<List<string>>();
         private List<string> itemName = new List<string>();
+        private Dictionary<string, string> dic = new Dictionary<string, string>();
         public modifyUserInfo(string name,string pwd)
         {
             InitializeComponent();
@@ -29,14 +30,25 @@ namespace 票务管理系统
 
         private void getFormData(List<List<string>> data)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            foreach (var row in dataGridView1.Rows)
+            data.Clear();
+            for (int i = 0; i < this.dataGridView1.Rows.Count-1; i++)
             {
-                List<string> temp = new List<string>();
-                
-                foreach(DataGridViewColumn col in dataGridView1.Columns)
+                if (this.dataGridView1.Rows[i] == null)
                 {
-                    temp.Add(row.Cells[col.Name].Value.ToString());
+                    continue;
+                }
+                List<string> temp = new List<string>();
+                for(int j = 0; j < itemName.Count; j++)
+                {
+                    try
+                    {
+                        temp.Add(this.dataGridView1.Rows[i].Cells[itemName[j]].Value.ToString());
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        this.Close();
+                    }
                 }
                 data.Add(temp);
             }
@@ -46,20 +58,12 @@ namespace 票务管理系统
             try
             {
                 db.Open();
-                SqlCommand cmd = new SqlCommand("select nickname as '用户名',IDCardNumber as '身份证号码',_admin as '管理员权限',_status as '管理员权限',regTime as '注册时间',active as '活跃度',sex as '性别',phoneNum as '手机号码',email as '电子邮箱' from _user where _admin = '0';", db);
+                SqlCommand cmd = new SqlCommand("select nickname as '用户名',IDCardNumber as '身份证号码',_admin as '管理员权限',_status as '账户状态',regTime as '注册时间',active as '活跃度',sex as '性别',phoneNum as '手机号码',email as '电子邮箱' from _user where _admin = '0';", db);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0];
-                getFormData(oldData);
-                for(int i = 0; i < oldData.Count; i++)
-                {
-                    for(int j = 0; j < oldData[i].Count; j++)
-                    {
-                        MessageBox.Show(oldData[i][j]);
-                    }
-                }
                 db.Close();
             }
             catch(Exception ex)
@@ -67,15 +71,25 @@ namespace 票务管理系统
                 MessageBox.Show("未知错误\r\n"+ex.Message);
                 Dispose();
             }
-            itemName.Add("nickname");
-            itemName.Add("IDCardNumber");
-            itemName.Add("_admin");
-            itemName.Add("_status");
-            itemName.Add("regTime");
-            itemName.Add("active");
-            itemName.Add("sex");
-            itemName.Add("phoneNum");
-            itemName.Add("email");
+            itemName.Add("用户名");
+            itemName.Add("身份证号码");
+            itemName.Add("管理员权限");
+            itemName.Add("账户状态");
+            itemName.Add("注册时间");
+            itemName.Add("活跃度");
+            itemName.Add("性别");
+            itemName.Add("手机号码");
+            itemName.Add("电子邮箱");
+            getFormData(oldData);
+            dic.Add("用户名", "nickname");
+            dic.Add("身份证号码", "IDCardNumber");
+            dic.Add("管理员权限", "_admin");
+            dic.Add("账户状态", "_status");
+            dic.Add("注册时间", "regTime");
+            dic.Add("活跃度", "active");
+            dic.Add("性别", "sex");
+            dic.Add("手机号码", "phoneNum");
+            dic.Add("电子邮箱", "email");
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -113,14 +127,14 @@ namespace 票务管理系统
             }
             catch(Exception ex)
             {
-                MessageBox.Show("更新失败\r\n", ex.Message);
+                MessageBox.Show("更新失败\r\n"+ ex.Message);
             }
         }
 
         private void btn1_Click(object sender, EventArgs e)
         {
             getFormData(newData);
-            MessageBox.Show(newData.Count.ToString());
+            
             int rowCnt = newData.Count;
             if (rowCnt == 0)
             {
@@ -128,17 +142,13 @@ namespace 票务管理系统
                 return;
             }
             int colCnt = newData[0].Count;
-            MessageBox.Show("modify");
-            for (int i = 0; i < rowCnt; i++)
+            for (int i = 0; i < rowCnt-1; i++)
             {
                 for(int j = 0; j < colCnt; j++)
                 {
-                    MessageBox.Show(oldData[i][j].ToString(), newData[i][j].ToString());
                     if (oldData[i][j] != newData[i][j])
                     {
-                        
-                        update(itemName[j], newData[i][j],newData[i][0]);
-                        return;
+                        update(dic[itemName[j]], newData[i][j],newData[i][0]);
                     }
                 }
             }
