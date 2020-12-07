@@ -28,12 +28,12 @@ namespace 票务管理系统
             try
             {
                 db.Open();
-                SqlCommand cmd = new SqlCommand("select nickname,IDCardNumber,_admin,_status,regTime,active,sex,phoneNum,email from _user where _admin = '0';", db);
+                SqlCommand cmd = new SqlCommand("select nickname as '用户名',IDCardNumber as '身份证号码',_admin as '管理员权限',_status as '',regTime,active,sex,phoneNum,email from _user where _admin = '0';", db);
                 SqlDataAdapter da = new SqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-                //MessageBox.Show(ds.Tables[0].Rows)
+                dataGridView1.DataSource = ds.Tables[0];
                 db.Close();
             }
             catch(Exception ex)
