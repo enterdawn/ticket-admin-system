@@ -175,6 +175,7 @@ namespace 票务管理系统
             this.nickName.Location = new System.Drawing.Point(178, 107);
             this.nickName.Margin = new System.Windows.Forms.Padding(6);
             this.nickName.Name = "nickName";
+            this.nickName.ReadOnly = true;
             this.nickName.Size = new System.Drawing.Size(196, 35);
             this.nickName.TabIndex = 18;
             // 

@@ -33,7 +33,7 @@ namespace 票务管理系统
                 da.SelectCommand = cmd;
                 DataSet ds = new DataSet();
                 da.Fill(ds);
-
+                //MessageBox.Show(ds.Tables[0].Rows)
                 db.Close();
             }
             catch(Exception ex)
