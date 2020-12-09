@@ -35,35 +35,38 @@ namespace 票务管理系统
             {
                 db.Open();
                 SqlCommand cmd0 = new SqlCommand();
-                cmd0.CommandText = "select userid from _user where nickname=@nickmane;";
+                cmd0.CommandText = "select userid from _user where nickname='"+name+"'";
+                /*
                 SqlParameter[] paras =
                 {
                     new SqlParameter("@nickmane",name),
                 };
                 cmd0.Parameters.AddRange(paras);
 
-                MessageBox.Show(cmd0.CommandText);
+                */
                 cmd0.Connection = db;
                 SqlDataReader readeruser;
+                MessageBox.Show(cmd0.CommandText);
                 readeruser = cmd0.ExecuteReader();
-                MessageBox.Show(readeruser.GetString(0));
+                readeruser.Read();
+
 
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from _user where nickname = @UID  and deleteOrNot=0;";
-                SqlParameter[] paras2 =
-                {
-                    new SqlParameter("@UID",readeruser.GetString(0)),
-                };
+
+                string str= String.Format("select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from ticket where userid = {0}  and deleteOrNot=0;", readeruser[0].ToString());
+                readeruser.Close();
+                cmd.CommandText = str;  
                 cmd.Connection = db;
-                cmd.Parameters.AddRange(paras2);
+                MessageBox.Show(cmd.CommandText);
                 SqlDataReader reader = null;
                 reader = cmd.ExecuteReader();
+                
                 while (reader.Read())
                 {
-                    string result = reader.GetString(0) + "," + reader.GetString(1);
+                    string result = reader[0].ToString();
                     MessageBox.Show(result);
                 }
-                //MessageBox.Show(ds.Tables[0].Rows)
+                reader.Close();
                 db.Close();
             }
             catch (Exception ex)
