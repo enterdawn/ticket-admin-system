@@ -98,6 +98,7 @@ namespace 票务管理系统
             // 
             // ticketlist
             // 
+            this.ticketlist.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.ticketlist.FullRowSelect = true;
             this.ticketlist.GridLines = true;
             this.ticketlist.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;

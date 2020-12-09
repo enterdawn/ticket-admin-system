@@ -23,8 +23,14 @@ namespace 票务管理系统
             label2.Text = _Name+"，您好";
             name = _Name;
             pwd = Pwd;
-            ticketlist.Columns.Add("列标题1", 120, HorizontalAlignment.Left);
-            /*
+            ticketlist.Columns.Add("类型", 100, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("车次/航班号", 100, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("购买时间", 150, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("价格", 100, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("座位", 100, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("添加时间", 150, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("是否确认", 100, HorizontalAlignment.Left);
+            ticketlist.Columns.Add("是否退票", 100, HorizontalAlignment.Left);
             try
             {
                 db.Open();
@@ -35,21 +41,28 @@ namespace 票务管理系统
                     new SqlParameter("@nickmane",name),
                 };
                 cmd0.Parameters.AddRange(paras);
-                SqlDataAdapter nickN = new SqlDataAdapter();//实例化sqldataadpter
-                nickN.SelectCommand = cmd0;//设置为已实例化SqlDataAdapter的查询命令
-                DataSet nick = new DataSet();//实例化dataset
-                nickN.Fill(nick);//把数据填充到dataset
+
+                MessageBox.Show(cmd0.CommandText);
+                cmd0.Connection = db;
+                SqlDataReader readeruser;
+                readeruser = cmd0.ExecuteReader();
+                MessageBox.Show(readeruser.GetString(0));
+
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "select ticketID,butTime,price,seat,insertTime,varifyOrNot,flightNumber,refundOrnot from _user where nickname = @UID  and deleteOrNot=0;";
+                cmd.CommandText = "select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from _user where nickname = @UID  and deleteOrNot=0;";
                 SqlParameter[] paras2 =
                 {
-                    new SqlParameter("@UID",nick.Tables[0]),
+                    new SqlParameter("@UID",readeruser.GetString(0)),
                 };
+                cmd.Connection = db;
                 cmd.Parameters.AddRange(paras2);
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataSet ds = new DataSet();
-                da.Fill(ds);
+                SqlDataReader reader = null;
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string result = reader.GetString(0) + "," + reader.GetString(1);
+                    MessageBox.Show(result);
+                }
                 //MessageBox.Show(ds.Tables[0].Rows)
                 db.Close();
             }
@@ -58,7 +71,6 @@ namespace 票务管理系统
                 MessageBox.Show("未知错误\r\n" + ex.Message);
                 Dispose();
             }
-            */
         }
 
         private void label1_Click(object sender, EventArgs e)
