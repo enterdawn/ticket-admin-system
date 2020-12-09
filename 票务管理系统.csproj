@@ -127,6 +127,12 @@
     <Compile Include="reg.Designer.cs">
       <DependentUpon>reg.cs</DependentUpon>
     </Compile>
+    <Compile Include="user-add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user-add.Designer.cs">
+      <DependentUpon>user-add.cs</DependentUpon>
+    </Compile>
     <Compile Include="users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="reg.resx">
       <DependentUpon>reg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user-add.resx">
+      <DependentUpon>user-add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="users.resx">
       <DependentUpon>users.cs</DependentUpon>
