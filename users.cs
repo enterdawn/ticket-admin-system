@@ -20,9 +20,45 @@ namespace 票务管理系统
         {
             
             InitializeComponent();
-            label2.Text = _Name+"您好";
+            label2.Text = _Name+"，您好";
             name = _Name;
             pwd = Pwd;
+            ticketlist.Columns.Add("列标题1", 120, HorizontalAlignment.Left);
+            /*
+            try
+            {
+                db.Open();
+                SqlCommand cmd0 = new SqlCommand();
+                cmd0.CommandText = "select userid from _user where nickname=@nickmane;";
+                SqlParameter[] paras =
+                {
+                    new SqlParameter("@nickmane",name),
+                };
+                cmd0.Parameters.AddRange(paras);
+                SqlDataAdapter nickN = new SqlDataAdapter();//实例化sqldataadpter
+                nickN.SelectCommand = cmd0;//设置为已实例化SqlDataAdapter的查询命令
+                DataSet nick = new DataSet();//实例化dataset
+                nickN.Fill(nick);//把数据填充到dataset
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "select ticketID,butTime,price,seat,insertTime,varifyOrNot,flightNumber,refundOrnot from _user where nickname = @UID  and deleteOrNot=0;";
+                SqlParameter[] paras2 =
+                {
+                    new SqlParameter("@UID",nick.Tables[0]),
+                };
+                cmd.Parameters.AddRange(paras2);
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                //MessageBox.Show(ds.Tables[0].Rows)
+                db.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("未知错误\r\n" + ex.Message);
+                Dispose();
+            }
+            */
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -48,41 +84,9 @@ namespace 票务管理系统
             System.Environment.Exit(0);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ticketlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                db.Open();
-                SqlCommand cmd0 = new SqlCommand();
-                cmd0.CommandText = "select userid from _user where nickname=@nickmane;";
-                SqlParameter[] paras =
-                {
-                    new SqlParameter("@nickmane",name),
-                };
-                cmd0.Parameters.AddRange(paras);
-                SqlDataAdapter nickN = new SqlDataAdapter();//实例化sqldataadpter
-                nickN.SelectCommand = cmd0;//设置为已实例化SqlDataAdapter的查询命令
-                DataSet nick = new DataSet();//实例化dataset
-                nickN.Fill(nick);//把数据填充到dataset
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandText="select ticketID,butTime,price,seat,insertTime,varifyOrNot,flightNumber,refundOrnot from _user where nickname = @UID  and deleteOrNot=0;";
-                SqlParameter[] paras2 =
-                {
-                    new SqlParameter("@UID",nick.Tables[0]),
-                };
-                cmd.Parameters.AddRange(paras2);
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                //MessageBox.Show(ds.Tables[0].Rows)
-                db.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("未知错误\r\n" + ex.Message);
-                Dispose();
-            }
+
         }
     }
 }
