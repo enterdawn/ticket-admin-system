@@ -98,7 +98,7 @@ namespace 票务管理系统
 
         public void updatelist()
         {
-            ticketlist.Clear();
+            ticketlist.Items.Clear();
             db.Open();
             SqlCommand cmd = new SqlCommand();
             string str = String.Format("select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from ticket where userid = {0}  and deleteOrNot=0;", uid);
@@ -148,6 +148,8 @@ namespace 票务管理系统
         private void addticket_Click(object sender, EventArgs e)
         {
             user_add uadd = new user_add(uid);
+            //ticketlist.Clear();
+            updatelist();
             uadd.Show();
             
         }

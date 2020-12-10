@@ -109,10 +109,11 @@ namespace 票务管理系统
             // 
             // ttime
             // 
-            this.ttime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.ttime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.ttime.Location = new System.Drawing.Point(173, 112);
             this.ttime.Name = "ttime";
-            this.ttime.Size = new System.Drawing.Size(200, 21);
+            this.ttime.ShowUpDown = true;
+            this.ttime.Size = new System.Drawing.Size(165, 21);
             this.ttime.TabIndex = 7;
             // 
             // tprice

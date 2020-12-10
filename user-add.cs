@@ -17,6 +17,8 @@ namespace 票务管理系统
         {
             this.uid = uid;
             InitializeComponent();
+            this.ttime.CustomFormat = "yyyy/MM/dd hh:mm:ss";
+            
         }
 
         private void update_Click(object sender, EventArgs e)
