@@ -159,6 +159,10 @@ namespace 票务管理系统
             updatelist();
         }
 
+        private void delticket_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
     

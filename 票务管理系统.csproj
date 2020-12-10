@@ -133,6 +133,12 @@
     <Compile Include="user-add.Designer.cs">
       <DependentUpon>user-add.cs</DependentUpon>
     </Compile>
+    <Compile Include="user-publicinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user-publicinfo.Designer.cs">
+      <DependentUpon>user-publicinfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="user-add.resx">
       <DependentUpon>user-add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user-publicinfo.resx">
+      <DependentUpon>user-publicinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="users.resx">
       <DependentUpon>users.cs</DependentUpon>

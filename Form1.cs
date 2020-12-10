@@ -14,7 +14,7 @@ namespace 票务管理系统
 
     public partial class Form1 : Form
     {
-        private static string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
+        public static string connString = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename =\"" + Environment.CurrentDirectory + "\\database.mdf\"; Integrated Security = False; Connect Timeout = 30";
         private SqlConnection db = new SqlConnection(connString);
         public Form1()
         {
