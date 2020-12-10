@@ -134,6 +134,7 @@ namespace 票务管理系统
             this.button1.TabIndex = 9;
             this.button1.Text = "公共信息";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // users
             // 

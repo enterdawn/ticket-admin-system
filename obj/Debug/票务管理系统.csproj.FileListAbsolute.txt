@@ -39,3 +39,4 @@ D:\C#\票务管理系统\obj\Debug\票务管理系统.info.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.admin_password.resources
 D:\VS数据\ticket\obj\Debug\票务管理系统.admin_password.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.user_add.resources
+D:\C#\票务管理系统\obj\Debug\票务管理系统.user_publicinfo.resources

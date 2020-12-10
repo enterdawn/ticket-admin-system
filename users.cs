@@ -149,7 +149,7 @@ namespace 票务管理系统
         {
             user_add uadd = new user_add(uid);
             //ticketlist.Clear();
-            updatelist();
+            //updatelist();
             uadd.Show();
             
         }
@@ -162,6 +162,12 @@ namespace 票务管理系统
         private void delticket_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            user_publicinfo n = new user_publicinfo();
+            n.Show();
         }
     }
     
