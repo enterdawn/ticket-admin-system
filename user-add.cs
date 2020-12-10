@@ -11,9 +11,18 @@ namespace 票务管理系统
 {
     public partial class user_add : Form
     {
-        public user_add()
+        private string uid;
+
+        public user_add(string uid)
         {
+            this.uid = uid;
             InitializeComponent();
+        }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            //updatelist();
+            this.Close();
         }
     }
 }

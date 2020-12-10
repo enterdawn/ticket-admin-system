@@ -39,6 +39,7 @@ namespace 票务管理系统
             this.ttime = new System.Windows.Forms.DateTimePicker();
             this.tprice = new System.Windows.Forms.TextBox();
             this.Tseat = new System.Windows.Forms.TextBox();
+            this.update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +81,7 @@ namespace 票务管理系统
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 199);
+            this.label5.Location = new System.Drawing.Point(55, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 4;
@@ -89,6 +90,11 @@ namespace 票务管理系统
             // ttype
             // 
             this.ttype.FormattingEnabled = true;
+            this.ttype.Items.AddRange(new object[] {
+            "train",
+            "plain",
+            "coach",
+            "ship"});
             this.ttype.Location = new System.Drawing.Point(173, 42);
             this.ttype.Name = "ttype";
             this.ttype.Size = new System.Drawing.Size(121, 20);
@@ -103,6 +109,7 @@ namespace 票务管理系统
             // 
             // ttime
             // 
+            this.ttime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.ttime.Location = new System.Drawing.Point(173, 112);
             this.ttime.Name = "ttime";
             this.ttime.Size = new System.Drawing.Size(200, 21);
@@ -117,16 +124,27 @@ namespace 票务管理系统
             // 
             // Tseat
             // 
-            this.Tseat.Location = new System.Drawing.Point(173, 199);
+            this.Tseat.Location = new System.Drawing.Point(173, 184);
             this.Tseat.Name = "Tseat";
             this.Tseat.Size = new System.Drawing.Size(121, 21);
             this.Tseat.TabIndex = 9;
+            // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(173, 223);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(75, 23);
+            this.update.TabIndex = 10;
+            this.update.Text = "提交";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
             // 
             // user_add
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 293);
+            this.Controls.Add(this.update);
             this.Controls.Add(this.Tseat);
             this.Controls.Add(this.tprice);
             this.Controls.Add(this.ttime);
@@ -156,5 +174,6 @@ namespace 票务管理系统
         private System.Windows.Forms.DateTimePicker ttime;
         private System.Windows.Forms.TextBox tprice;
         private System.Windows.Forms.TextBox Tseat;
+        private System.Windows.Forms.Button update;
     }
 }

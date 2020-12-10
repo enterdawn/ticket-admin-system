@@ -46,6 +46,7 @@ namespace 票务管理系统
             this.addticket.TabIndex = 1;
             this.addticket.Text = "添加行程";
             this.addticket.UseVisualStyleBackColor = true;
+            this.addticket.Click += new System.EventHandler(this.addticket_Click);
             // 
             // label1
             // 
@@ -139,6 +140,6 @@ namespace 票务管理系统
         private System.Windows.Forms.Button delticket;
         private System.Windows.Forms.Button changeticket;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListView ticketlist;
+        public System.Windows.Forms.ListView ticketlist;
     }
 }

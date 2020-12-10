@@ -79,43 +79,7 @@ namespace 票务管理系统
                 Dispose();
             }
         }
-        private void updatelist()
-        {
-            db.Open();
-            SqlCommand cmd = new SqlCommand();
-            string str = String.Format("select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from ticket where userid = {0}  and deleteOrNot=0;", uid);
-            cmd.CommandText = str;
-            cmd.Connection = db;
-            //MessageBox.Show(cmd.CommandText);
-            SqlDataReader reader = null;
-            reader = cmd.ExecuteReader();
-            ticketlist.BeginUpdate();
-            while (reader.Read())
-            {
-                ListViewItem swap=new ListViewItem();
-                swap.Text = reader[1].ToString();
-                swap.SubItems.Add(reader[2].ToString());
-                swap.SubItems.Add(reader[3].ToString());
-                swap.SubItems.Add(reader[4].ToString());
-                swap.SubItems.Add(reader[5].ToString());
-                swap.SubItems.Add(reader[6].ToString());
-                if(reader[7].ToString()=="0")
-                    swap.SubItems.Add("No");
-                else
-                    swap.SubItems.Add("Yes");
-                if (reader[8].ToString() == "0")
-                    swap.SubItems.Add("No");
-                else
-                    swap.SubItems.Add("Yes");
-
-                ticketlist.Items.Add(swap);
-                string result = reader[0].ToString();
-                MessageBox.Show(result);
-            }
-            ticketlist.EndUpdate();
-            reader.Close();
-            db.Close();
-        }
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -132,7 +96,44 @@ namespace 票务管理系统
             INFO.Show();
         }
 
- 
+        public void updatelist()
+        {
+            ticketlist.Clear();
+            db.Open();
+            SqlCommand cmd = new SqlCommand();
+            string str = String.Format("select ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot from ticket where userid = {0}  and deleteOrNot=0;", uid);
+            cmd.CommandText = str;
+            cmd.Connection = db;
+            //MessageBox.Show(cmd.CommandText);
+            SqlDataReader reader = null;
+            reader = cmd.ExecuteReader();
+            ticketlist.BeginUpdate();
+            while (reader.Read())
+            {
+                ListViewItem swap = new ListViewItem();
+                swap.Text = reader[1].ToString();
+                swap.SubItems.Add(reader[2].ToString());
+                swap.SubItems.Add(reader[3].ToString());
+                swap.SubItems.Add(reader[4].ToString());
+                swap.SubItems.Add(reader[5].ToString());
+                swap.SubItems.Add(reader[6].ToString());
+                if (reader[7].ToString() == "0")
+                    swap.SubItems.Add("No");
+                else
+                    swap.SubItems.Add("Yes");
+                if (reader[8].ToString() == "0")
+                    swap.SubItems.Add("No");
+                else
+                    swap.SubItems.Add("Yes");
+
+                ticketlist.Items.Add(swap);
+                //string result = reader[0].ToString();
+                //MessageBox.Show(result);
+            }
+            ticketlist.EndUpdate();
+            reader.Close();
+            db.Close();
+        }
 
         private void users_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -142,6 +143,13 @@ namespace 票务管理系统
         private void ticketlist_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void addticket_Click(object sender, EventArgs e)
+        {
+            user_add uadd = new user_add(uid);
+            uadd.Show();
+            
         }
     }
 }
