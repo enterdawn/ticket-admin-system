@@ -153,5 +153,13 @@ namespace 票务管理系统
             uadd.Show();
             
         }
+
+        private void update_Click(object sender, EventArgs e)
+        {
+            updatelist();
+        }
+
     }
+    
+    
 }

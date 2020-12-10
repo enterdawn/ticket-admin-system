@@ -36,6 +36,7 @@ namespace 票务管理系统
             this.changeticket = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ticketlist = new System.Windows.Forms.ListView();
+            this.update = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // addticket
@@ -113,11 +114,22 @@ namespace 票务管理系统
             this.ticketlist.View = System.Windows.Forms.View.Details;
             this.ticketlist.SelectedIndexChanged += new System.EventHandler(this.ticketlist_SelectedIndexChanged);
             // 
+            // update
+            // 
+            this.update.Location = new System.Drawing.Point(640, 40);
+            this.update.Name = "update";
+            this.update.Size = new System.Drawing.Size(82, 45);
+            this.update.TabIndex = 8;
+            this.update.Text = "刷新";
+            this.update.UseVisualStyleBackColor = true;
+            this.update.Click += new System.EventHandler(this.update_Click);
+            // 
             // users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 519);
+            this.Controls.Add(this.update);
             this.Controls.Add(this.ticketlist);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.changeticket);
@@ -141,5 +153,6 @@ namespace 票务管理系统
         private System.Windows.Forms.Button changeticket;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ListView ticketlist;
+        private System.Windows.Forms.Button update;
     }
 }

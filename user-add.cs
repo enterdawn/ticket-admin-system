@@ -23,7 +23,6 @@ namespace 票务管理系统
 
         private void update_Click(object sender, EventArgs e)
         {
-            //updatelist();
             this.Close();
         }
     }
