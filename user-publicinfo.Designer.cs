@@ -44,7 +44,7 @@ namespace 票务管理系统
             this.publicview.HideSelection = false;
             this.publicview.Location = new System.Drawing.Point(12, 94);
             this.publicview.Name = "publicview";
-            this.publicview.Size = new System.Drawing.Size(860, 374);
+            this.publicview.Size = new System.Drawing.Size(861, 500);
             this.publicview.TabIndex = 0;
             this.publicview.UseCompatibleStateImageBehavior = false;
             this.publicview.View = System.Windows.Forms.View.Details;
@@ -69,12 +69,13 @@ namespace 票务管理系统
             // 
             // click
             // 
-            this.click.Location = new System.Drawing.Point(623, 27);
+            this.click.Location = new System.Drawing.Point(696, 27);
             this.click.Name = "click";
             this.click.Size = new System.Drawing.Size(83, 21);
             this.click.TabIndex = 3;
             this.click.Text = "查询";
             this.click.UseVisualStyleBackColor = true;
+            this.click.Click += new System.EventHandler(this.click_Click);
             // 
             // start
             // 
@@ -94,7 +95,7 @@ namespace 票务管理系统
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 480);
+            this.ClientSize = new System.Drawing.Size(889, 606);
             this.Controls.Add(this.end);
             this.Controls.Add(this.start);
             this.Controls.Add(this.click);

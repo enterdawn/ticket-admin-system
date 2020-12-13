@@ -33,7 +33,6 @@ namespace 票务管理系统
             this.label1 = new System.Windows.Forms.Label();
             this.changeuserinfo = new System.Windows.Forms.Button();
             this.delticket = new System.Windows.Forms.Button();
-            this.changeticket = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ticketlist = new System.Windows.Forms.ListView();
             this.update = new System.Windows.Forms.Button();
@@ -81,16 +80,6 @@ namespace 票务管理系统
             this.delticket.UseVisualStyleBackColor = true;
             this.delticket.Click += new System.EventHandler(this.delticket_Click);
             // 
-            // changeticket
-            // 
-            this.changeticket.Location = new System.Drawing.Point(504, 39);
-            this.changeticket.Name = "changeticket";
-            this.changeticket.Size = new System.Drawing.Size(106, 46);
-            this.changeticket.TabIndex = 5;
-            this.changeticket.Text = "改签";
-            this.changeticket.UseVisualStyleBackColor = true;
-            this.changeticket.Click += new System.EventHandler(this.changeticket_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -118,7 +107,7 @@ namespace 票务管理系统
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(640, 40);
+            this.update.Location = new System.Drawing.Point(523, 41);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(82, 45);
             this.update.TabIndex = 8;
@@ -128,7 +117,7 @@ namespace 票务管理系统
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(756, 40);
+            this.button1.Location = new System.Drawing.Point(659, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 46);
             this.button1.TabIndex = 9;
@@ -145,7 +134,6 @@ namespace 票务管理系统
             this.Controls.Add(this.update);
             this.Controls.Add(this.ticketlist);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.changeticket);
             this.Controls.Add(this.delticket);
             this.Controls.Add(this.changeuserinfo);
             this.Controls.Add(this.label1);
@@ -163,7 +151,6 @@ namespace 票务管理系统
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button changeuserinfo;
         private System.Windows.Forms.Button delticket;
-        private System.Windows.Forms.Button changeticket;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.ListView ticketlist;
         private System.Windows.Forms.Button update;
