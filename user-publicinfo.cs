@@ -17,6 +17,7 @@ namespace 票务管理系统
         {
             InitializeComponent();
             publicview.Columns.Add("票号", 100, HorizontalAlignment.Left);
+            publicview.Columns.Add("车次/航班号", 100, HorizontalAlignment.Left);
             publicview.Columns.Add("类型", 100, HorizontalAlignment.Left);
             publicview.Columns.Add("剩余量", 70, HorizontalAlignment.Left);
             publicview.Columns.Add("公司", 100, HorizontalAlignment.Left);
@@ -33,22 +34,22 @@ namespace 票务管理系统
             publicview.Items.Clear();
             db.Open();
             SqlCommand cmd = new SqlCommand();
-            string str = "select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket;";
+            string str = "select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,price,fnum from classTicket;";
             if (start.Text == ""&&end.Text=="")
             {
                 
             }
             else if(start.Text == "")
             {
-                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket where distination= '{0}';",end.Text);
+                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket where distination= '{0}';",end.Text);
             }
             else if (end.Text == "")
             {
-                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket where placeOfDeparture= '{0}';", start.Text);
+                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket where placeOfDeparture= '{0}';", start.Text);
             }
             else
             {
-                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket where placeOfDeparture= '{0}' and distination= '{1}';", start.Text, end.Text);
+                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket where placeOfDeparture= '{0}' and distination= '{1}';", start.Text, end.Text);
             }
             cmd.CommandText = str;
             cmd.Connection = db;
@@ -60,6 +61,7 @@ namespace 票务管理系统
             {
                 ListViewItem swap = new ListViewItem();
                 swap.Text = reader[0].ToString();
+                swap.SubItems.Add(reader[10].ToString());
                 swap.SubItems.Add(reader[1].ToString());
                 swap.SubItems.Add(reader[2].ToString());
                 swap.SubItems.Add(reader[3].ToString());
