@@ -34,14 +34,14 @@ namespace 票务管理系统
             publicview.Items.Clear();
             db.Open();
             SqlCommand cmd = new SqlCommand();
-            string str = "select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,price,fnum from classTicket;";
+            string str = "select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket;";
             if (start.Text == ""&&end.Text=="")
             {
                 
             }
             else if(start.Text == "")
             {
-                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket where distination= '{0}';",end.Text);
+                str = String.Format("select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price,fnum from classTicket where distination= '{0}';", end.Text);
             }
             else if (end.Text == "")
             {
@@ -70,10 +70,9 @@ namespace 票务管理系统
                 swap.SubItems.Add(reader[6].ToString());
                 swap.SubItems.Add(reader[7].ToString());
                 if(reader[8].ToString()=="1") swap.SubItems.Add("正常");
-                if (reader[8].ToString() == "2") swap.SubItems.Add("延误/晚点");
-                if (reader[8].ToString() == "3") swap.SubItems.Add("停运");
+                if(reader[8].ToString() == "2") swap.SubItems.Add("延误/晚点");
+                if(reader[8].ToString() == "3") swap.SubItems.Add("停运");
                 swap.SubItems.Add(reader[9].ToString());
-
 
                 publicview.Items.Add(swap);
                 //string result = reader[0].ToString();
