@@ -26,22 +26,32 @@ namespace 票务管理系统
         {
             SqlConnection db = new SqlConnection(Form1.connString);
             db.Open();
-            SqlCommand comm = null;
-            SqlCommand comm1 = null;
-            string str1 = "select ticketID,_type,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket where ticketID= '{0}';";
-            String.Format(str1, ticketid.Text);
-            comm1.CommandText = str1;
+            SqlCommand comm = new SqlCommand();
+            SqlCommand comm1 = new SqlCommand();
+            string str1 = "select ticketID,_type,fnum,restNumber,company,placeOfDeparture,distination,startTime ,diachronic,_status,price from classTicket where ticketID={0}";
+            str1=String.Format(str1, ticketid.Text);
             comm1.Connection = db;
+            comm1.CommandText = str1;
+            //MessageBox.Show(str1);
             SqlDataReader readert;
             readert = comm1.ExecuteReader();
-            if (!readert.Read()) {
+            if (readert.Read()) {
+                
+            }
+            else
+            {
                 MessageBox.Show("票号输入错误");
                 return;
             }
-            string str = "INSERT INTO ticket ( ticketID,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot ) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}'); ";
-            //String.Format(str, ticketid.Text, readert[1].ToString, readert[1].ToString, ttime.Value.ToString);
+            string str = "INSERT INTO ticket ( ticketID,userid,ticketype,flightNumber,butTime,price,seat,insertTime,varifyOrNot,refundOrnot ) VALUES ({0},{1},'{2}','{3}','{4}',{5},'{6}','{7}',{8},{9}); ";
+            str=String.Format(str, ticketid.Text, uid, readert[1], readert[2], ttime.Value.ToString("yyyy/MM/dd HH:mm:ss"), tprice.Text, Tseat.Text,DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"),0,0);
             comm.CommandText = str;
+            readert.Close();
+            comm.Connection = db;
+            //MessageBox.Show(str);
+            comm.ExecuteReader();
             this.Close();
+            MessageBox.Show("添加成功，刷新后查看");
         }
     }
 }
