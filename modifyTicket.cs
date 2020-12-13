@@ -120,12 +120,12 @@ namespace 票务管理系统
         {
 
         }
-        private void update(string itemName, string val, string nickname)
+        private void update(string itemName, string val, string flightNumber,string userid)
         {
             try
             {
                 db.Open();
-                SqlCommand cmd = new SqlCommand("update ticket set " + itemName + " = '" + val + "' where nickname = '" + nickname + "';", db);
+                SqlCommand cmd = new SqlCommand("update ticket set " + itemName + " = '" + val + "' where flightNumber = '" + flightNumber + "' and userid = '" + userid + "';", db) ;
                 cmd.ExecuteNonQuery();
                 db.Close();
                 MessageBox.Show("修改成功");
@@ -140,7 +140,6 @@ namespace 票务管理系统
         private void button1_Click(object sender, EventArgs e)
         {
             getFormData(newData);
-
             int rowCnt = newData.Count;
             if (rowCnt == 0)
             {
@@ -154,10 +153,11 @@ namespace 票务管理系统
                 {
                     if (oldData[i][j] != newData[i][j])
                     {
-                        update(dic[itemName[j]], newData[i][j], newData[i][0]);
+                        update(dic[itemName[j]], newData[i][j], newData[i][0],newData[i][1]);
                     }
                 }
             }
+            oldData = newData;
         }
     }
 }
