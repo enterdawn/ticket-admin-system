@@ -87,5 +87,10 @@ namespace 票务管理系统
         {
             updatelist();
         }
+
+        private void user_publicinfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -42,9 +42,10 @@ namespace 票务管理系统
             this.publicview.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.publicview.GridLines = true;
             this.publicview.HideSelection = false;
-            this.publicview.Location = new System.Drawing.Point(12, 94);
+            this.publicview.Location = new System.Drawing.Point(24, 188);
+            this.publicview.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.publicview.Name = "publicview";
-            this.publicview.Size = new System.Drawing.Size(861, 500);
+            this.publicview.Size = new System.Drawing.Size(1718, 996);
             this.publicview.TabIndex = 0;
             this.publicview.UseCompatibleStateImageBehavior = false;
             this.publicview.View = System.Windows.Forms.View.Details;
@@ -52,26 +53,29 @@ namespace 票务管理系统
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 30);
+            this.label1.Location = new System.Drawing.Point(152, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(58, 24);
             this.label1.TabIndex = 1;
             this.label1.Text = "始发";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(320, 27);
+            this.label2.Location = new System.Drawing.Point(640, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(58, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "终到";
             // 
             // click
             // 
-            this.click.Location = new System.Drawing.Point(696, 27);
+            this.click.Location = new System.Drawing.Point(1392, 54);
+            this.click.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.click.Name = "click";
-            this.click.Size = new System.Drawing.Size(83, 21);
+            this.click.Size = new System.Drawing.Size(166, 42);
             this.click.TabIndex = 3;
             this.click.Text = "查询";
             this.click.UseVisualStyleBackColor = true;
@@ -79,31 +83,35 @@ namespace 票务管理系统
             // 
             // start
             // 
-            this.start.Location = new System.Drawing.Point(155, 27);
+            this.start.Location = new System.Drawing.Point(310, 54);
+            this.start.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.start.Name = "start";
-            this.start.Size = new System.Drawing.Size(112, 21);
+            this.start.Size = new System.Drawing.Size(220, 35);
             this.start.TabIndex = 4;
             // 
             // end
             // 
-            this.end.Location = new System.Drawing.Point(405, 27);
+            this.end.Location = new System.Drawing.Point(810, 54);
+            this.end.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.end.Name = "end";
-            this.end.Size = new System.Drawing.Size(128, 21);
+            this.end.Size = new System.Drawing.Size(252, 35);
             this.end.TabIndex = 5;
             // 
             // user_publicinfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 606);
+            this.ClientSize = new System.Drawing.Size(1778, 1212);
             this.Controls.Add(this.end);
             this.Controls.Add(this.start);
             this.Controls.Add(this.click);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.publicview);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "user_publicinfo";
             this.Text = "user_publicinfo";
+            this.Load += new System.EventHandler(this.user_publicinfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

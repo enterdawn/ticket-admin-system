@@ -68,12 +68,6 @@
     <Compile Include="admin-password.Designer.cs">
       <DependentUpon>admin-password.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin-ticket.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="admin-ticket.Designer.cs">
-      <DependentUpon>admin-ticket.cs</DependentUpon>
-    </Compile>
     <Compile Include="admin-user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     </Compile>
     <EmbeddedResource Include="admin-password.resx">
       <DependentUpon>admin-password.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="admin-ticket.resx">
-      <DependentUpon>admin-ticket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="admin-user.resx">
       <DependentUpon>admin-user.cs</DependentUpon>
