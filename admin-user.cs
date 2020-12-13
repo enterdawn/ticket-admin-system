@@ -52,5 +52,11 @@ namespace 票务管理系统
             admin_password wd = new admin_password();
             wd.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            modifyTicket _modifyTicket = new modifyTicket(name,pwd);
+            _modifyTicket.Show();
+        }
     }
 }
