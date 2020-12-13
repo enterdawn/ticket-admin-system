@@ -28,7 +28,27 @@ namespace 票务管理系统
             init();
         }
 
-       
+       private void numberToChinese(DataSet ds)
+        {
+            foreach(DataRow dr in ds.Tables[0].Rows)
+            {
+                foreach(DataColumn dc in ds.Tables[0].Columns)
+                {
+                    if (dc.ColumnName == "已验证" )
+                    {
+                        dr[dc] = dr[dc] == "1" ? "是" : "否";
+                    }
+                    if (dc.ColumnName == "是否删除")
+                    {
+                        dr[dc] = dr[dc] == "1" ? "是" : "否";
+                    }
+                    if (dc.ColumnName == "是否退票")
+                    {
+                        dr[dc] = dr[dc] == "1" ? "是" : "否";
+                    }
+                }
+            }
+        }
 
         private void init()
         {
@@ -41,6 +61,7 @@ namespace 票务管理系统
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0];
+                //numberToChinese(ds);
                 db.Close();
             }
             catch (Exception ex)
@@ -60,11 +81,11 @@ namespace 票务管理系统
             getFormData(oldData);
             dic.Add("航班号", "flightNumber");
             dic.Add("用户编号", "userid");
-            dic.Add("购买时间", "buyTime");
+            dic.Add("购买时间", "butTime");
             dic.Add("价格", "price");
             dic.Add("座位号", "seat");
             dic.Add("添加时间", "insertTime");
-            dic.Add("已验证", "verifyOrNot");
+            dic.Add("已验证", "varifyOrNot");
             dic.Add("是否删除", "deleteOrNot");
             dic.Add("是否退票", "refundOrNot");
         }
