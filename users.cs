@@ -145,7 +145,7 @@ namespace 票务管理系统
         private void ticketlist_SelectedIndexChanged(object sender, EventArgs e)
         {
             ListView.SelectedIndexCollection c = ticketlist.SelectedIndices;
-            refundtime = ticketlist.Items[c[0]].Text;
+            //refundtime = ticketlist.Items[c[0]].Text;
         }
 
         private void addticket_Click(object sender, EventArgs e)
@@ -165,17 +165,17 @@ namespace 票务管理系统
         private void delticket_Click(object sender, EventArgs e)
         {
             db.Open();
-            DateTime h = new DateTime(1900, 1, 1, 0, 0, 0, 111);
-            MessageBox.Show(refundtime);
-            //int n = DateTime.Compare(refundtime,h );
-            //if (n<10) return;
+            if (ticketlist.SelectedItems == null)
+            {
+                return;
+            }
+            int ind = ticketlist.SelectedIndices[0];
+            string type = "";
+            string time = ticketlist.Items[ind].SubItems[5].Text;
             SqlCommand cmd = new SqlCommand();
-            //MessageBox.Show(ticketlist.SelectedItems[1].SubItems[1].Text);
-            string str = String.Format("update ticket set deleteOrNot=1  where userid = {0}  and butTime={1} ;", uid, refundtime);
-            cmd.CommandText = str;
             cmd.Connection = db;
-            MessageBox.Show(str);
-            cmd.ExecuteReader();
+            cmd.CommandText = "update ticket set refundOrNot = 1 where insertTime = '" + time+"';";
+            cmd.ExecuteNonQuery();
             db.Close();
         }
 

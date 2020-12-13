@@ -8,7 +8,6 @@ D:\VS数据\ticket\obj\Debug\票务管理系统.pdb
 D:\VS数据\ticket\obj\Debug\票务管理系统.admin_user.resources
 D:\VS数据\ticket\obj\Debug\票务管理系统.reg.resources
 D:\VS数据\ticket\obj\Debug\票务管理系统.users.resources
-D:\VS数据\ticket\obj\Debug\票务管理系统.admin_ticket.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.csprojAssemblyReference.cache
 D:\C#\票务管理系统\obj\Debug\票务管理系统.admin_ticket.resources
 D:\C#\票务管理系统\obj\Debug\票务管理系统.admin_user.resources
